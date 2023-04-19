@@ -1,0 +1,23 @@
+<ion-app class="content">
+  <ion-item class="card-item" *ngFor="let card of cards">
+    <ion-label class="date-label">{{ card.date }}</ion-label>
+    <ion-card class="ion-card-content">
+      <ion-card-content class="card-content">
+        <ion-item class="name-item">
+          <ion-label class="name-label margin-0">{{ card.name }}</ion-label>
+          <ion-label class="time-label margin-0">{{ card.time }}</ion-label>
+        </ion-item>
+        <ion-item class="price-item">
+          <ion-label
+            class="price-label margin-0"
+            [ngClass]="{
+              'red-font': card.symbol == '+',
+              'green-font': card.symbol == '-'
+            }"
+            >{{ card.symbol }}{{ card.price }}</ion-label
+          >
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+  </ion-item>
+</ion-app>
